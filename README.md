@@ -59,3 +59,8 @@ cd learning-to-self-train
 ├── exp_test.py                 # the python file with main function and parameter settings for meta-testing
 └── run_experiment.sh           # the script to run the whole experiment
 ```
+
+## Running Experiments
+
+Downloading the datasets
+
