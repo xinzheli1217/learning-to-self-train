@@ -56,16 +56,19 @@ cd learning-to-self-train
 ├── filenames_and_labels        # the folder containing image file paths and labels for experiments
 |
 ├── exp_train.py                # the python file with main function and parameter settings for meta-training
-├── exp_test.py                 # the python file with main function and parameter settings for meta-testing
-└── run_experiment.sh           # the script to run the whole experiment
+└── exp_test.py                 # the python file with main function and parameter settings for meta-testing
 ```
 
 ## Running Experiments
 
 First, download processed images: miniImagenet[\[Download Page\]] or tieredImagenet[\[Download Page\]], move the unziped folder to `./data`. And then download the pre-trained models: miniImagenet[\[Download Page\]] or tieredImagenet[\[Download Page\]], move the unziped folder to `./pretrain_weights_dir`. 
 
-### Semi-Supervised Meta-Training (e.g. 𝑚𝑖𝑛𝑖ImageNet, 1-shot)
-
+### Training from Pre-Trained Models
+Run semi-supervised meta-train phase (e.g. 𝑚𝑖𝑛𝑖ImageNet, 1-shot) :
 ```bash
-python exp_train.py --shot_num=1 --dataset='miniImagenet' --nb_ul_samples=10 --metatrain_iterations=15000
+python exp_train.py --shot_num=1 --dataset='miniImagenet' --nb_ul_samples=10 --metatrain_iterations=15000 --exp_name='LST_1_shot'
+```
+Run semi-supervised meta-test phase :
+```bash
+python exp_test.py --shot_num=1 --dataset='miniImagenet' --nb_ul_samples=100 --unfiles_num=10 --test_iter=15000 --recurrent_stage_nums=6 --nums_in_folders=30 --hard_selection=20 --exp_name='LST_1_shot'
 ```
