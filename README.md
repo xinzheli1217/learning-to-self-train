@@ -62,5 +62,7 @@ cd learning-to-self-train
 
 ## Running Experiments
 
-Downloading the datasets
+First, directly download processed images:
 
+* miniImagenet: [\[Download Page\]] 
+* tieredImagenet: [\[Download Page\]]
