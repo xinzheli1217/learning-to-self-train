@@ -16,3 +16,21 @@ You may download Anaconda and read the installation instruction on their officia
 <https://www.anaconda.com/download/>
 
 Create a new environment and install tensorflow on it:
+
+```bash
+conda create --name lst-tf python=2.7
+conda activate lst-tf
+conda install tensorflow-gpu=1.3.0
+```
+
+Install other requirements:
+```bash
+pip install scipy tqdm opencv-python pillow matplotlib
+```
+
+Clone this repository:
+
+```bash
+git clone https://github.com/yaoyao-liu/meta-transfer-learning.git 
+cd learning-to-self-train
+```
