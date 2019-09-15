@@ -62,4 +62,4 @@ cd learning-to-self-train
 
 ## Running Experiments
 
-Directly download processed images: miniImagenet [\[Download Page\]] and tieredImagenet [\[Download Page\]]. After unziping the files, move them to ./data.
+Directly download processed images: miniImagenet [\[Download Page\]] and tieredImagenet [\[Download Page\]]. After unziping the files, move them to the folder ./data.
