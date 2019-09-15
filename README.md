@@ -31,6 +31,22 @@ pip install scipy tqdm opencv-python pillow matplotlib
 Clone this repository:
 
 ```bash
-git clone https://github.com/yaoyao-liu/meta-transfer-learning.git 
+git clone https://github.com/xinzheli1217/learning-to-self-train.git 
 cd learning-to-self-train
+```
+
+## Project Architecture
+
+```
+.
+├── data_generator              # dataset generator 
+|   └── meta_data_generator.py  # data genertor for meta-train phase
+├── models                      # tensorflow model files 
+|   └── meta_model_LST.py       # semi-supervised meta-train model class
+├── trainer                     # tensorflow trianer files  
+|   └── meta.py                 # semi-supervised meta-train trainer class
+├── utils                       # a series of tools used in this repo
+|   └── misc.py                 # miscellaneous tool functions
+├── exp_train.py                # the python file with main function and parameter settings for meta-training
+└── exp_test.py                 # the python file with main function and parameter settings for meta-testing
 ```
