@@ -11,9 +11,9 @@ flags.DEFINE_integer('device_id', 1, 'GPU device ID to run the job.')
 flags.DEFINE_float('gpu_rate', 0.9, 'the parameter for the full_gpu_memory_mode')
 flags.DEFINE_string('phase', 'meta', 'pre or meta')
 flags.DEFINE_string('exp_log_label', 'weights_saving_dir', 'directory for summaries and checkpoints')
-flags.DEFINE_string('logdir_base', '/home/lxz/python_code/dis_experiments/', 'directory for logs')
+flags.DEFINE_string('logdir_base', './', 'directory for logs')
 flags.DEFINE_string('dataset','miniImagenet', 'dataset used in the experiment (miniImagenet or tieredImagenet)')
-flags.DEFINE_string('data_path', '/home/lxz/python_code', 'directory for dataset')
+flags.DEFINE_string('data_path', './', 'directory for dataset')
 flags.DEFINE_bool('full_gpu_memory_mode', False, 'in this mode, the code occupies GPU memory in advance')
 flags.DEFINE_string('exp_name', 'finetune_mini_RN', 'name for the experiment')
 
@@ -105,12 +105,11 @@ FLAGS.exp_string = exp_string
 print('Parameters: ' + exp_string)
 
 # Generate Log Folders
-base_dir = '/home/lxz/python_code/dis_experiments'
 FLAGS.finetune_w_path = 'pretrain_weights_dir/' + str(FLAGS.shot_num) +'-shot_MTL_weights'
-FLAGS.logdir = base_dir + '/' + FLAGS.exp_log_label
-FLAGS.pretrain_weights_path = base_dir + '/' + FLAGS.pretrain_w_path
-FLAGS.finetune_weights_path = base_dir + '/' + FLAGS.finetune_w_path
-FLAGS.test_output_dir = base_dir + '/test_output_dir'
+FLAGS.logdir = FLAGS.logdir_base + FLAGS.exp_log_label
+FLAGS.pretrain_weights_path = FLAGS.logdir_base + FLAGS.pretrain_w_path
+FLAGS.finetune_weights_path = FLAGS.logdir_base + FLAGS.finetune_w_path
+FLAGS.test_output_dir = FLAGS.logdir_base + 'test_output_dir'
 
 def main():
     os.environ['CUDA_VISIBLE_DEVICES'] = str(FLAGS.device_id)
