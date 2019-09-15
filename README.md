@@ -45,7 +45,7 @@ cd learning-to-self-train
 |   ├── models.py               # resnet12 CNN class
 |   └── meta_model_LST.py       # semi-supervised meta-train model class
 ├── trainer                     # tensorflow trianer files  
-|   └── meta.py                 # semi-supervised meta-train trainer class
+|   └── meta_LST.py             # semi-supervised meta-train trainer class
 ├── utils                       # a series of tools used in this repo
 |   └── misc.py                 # miscellaneous tool functions
 | 
