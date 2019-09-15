@@ -64,4 +64,7 @@ cd learning-to-self-train
 
 First, download processed images: miniImagenet[\[Download Page\]] or tieredImagenet[\[Download Page\]], move the unziped folder to `./data`. And then download the pre-trained models: miniImagenet[\[Download Page\]] or tieredImagenet[\[Download Page\]], move the unziped folder to `./pretrain_weights_dir`. 
 
-
+### Semi-Supervised Meta-Training
+```bash
+python exp_train.py 
+```
