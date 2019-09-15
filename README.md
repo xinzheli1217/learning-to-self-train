@@ -47,6 +47,14 @@ cd learning-to-self-train
 |   └── meta.py                 # semi-supervised meta-train trainer class
 ├── utils                       # a series of tools used in this repo
 |   └── misc.py                 # miscellaneous tool functions
+| 
+├── data                        # the folder containing datasets for experiments
+├── pretrain_weights_dir        # the folder containing MTL pre-training weights
+├── weights_saving_dir          # the folder containing meta-training weights
+├── test_output_dir             # the folder containing meta-testing files
+├── filenames_and_labels        # the folder containing image file paths and labels for experiments
+|
 ├── exp_train.py                # the python file with main function and parameter settings for meta-training
-└── exp_test.py                 # the python file with main function and parameter settings for meta-testing
+├── exp_test.py                 # the python file with main function and parameter settings for meta-testing
+└── run_experiment.sh           # the script to run the whole experiment
 ```
