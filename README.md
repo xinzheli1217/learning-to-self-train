@@ -68,7 +68,10 @@ Run semi-supervised meta-train phase (e.g. 𝑚𝑖𝑛𝑖ImageNet, 1-shot) :
 ```bash
 python exp_train.py --shot_num=1 --dataset='miniImagenet' --nb_ul_samples=10 --metatrain_iterations=15000 --exp_name='LST_1_shot'
 ```
-Run semi-supervised meta-test phase :
+Run semi-supervised meta-test phase (e.g. 𝑚𝑖𝑛𝑖ImageNet, 1-shot) :
 ```bash
 python exp_test.py --shot_num=1 --dataset='miniImagenet' --nb_ul_samples=100 --unfiles_num=10 --test_iter=15000 --recurrent_stage_nums=6 --nums_in_folders=30 --hard_selection=20 --exp_name='LST_1_shot'
 ```
+
+### Hyperparameters and Options
+There are some main hyperparameters used in the experiments, you can edit them in the `exp_train.py` and the `exp_test.py` file for meta-train and meta-test phase respectively.  
