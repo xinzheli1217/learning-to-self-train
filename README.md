@@ -42,6 +42,7 @@ cd learning-to-self-train
 ├── data_generator              # dataset generator 
 |   └── meta_data_generator.py  # data genertor for meta-train phase
 ├── models                      # tensorflow model files 
+|   ├── models.py               # resnet12 CNN class
 |   └── meta_model_LST.py       # semi-supervised meta-train model class
 ├── trainer                     # tensorflow trianer files  
 |   └── meta.py                 # semi-supervised meta-train trainer class
