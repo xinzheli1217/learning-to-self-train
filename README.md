@@ -75,3 +75,6 @@ python exp_test.py --shot_num=1 --dataset='miniImagenet' --nb_ul_samples=100 --u
 
 ### Hyperparameters and Options
 There are some main hyperparameters used in the experiments, you can edit them in the `exp_train.py` and the `exp_test.py` file for meta-train and meta-test phase respectively.  
+* Common hyperparameters (same for meta-train and meta-test):
+* Train-specific hyperparameters:
+* Test-specific hyperparameters:
