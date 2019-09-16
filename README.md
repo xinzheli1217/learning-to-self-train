@@ -7,6 +7,7 @@
 * [Installation](#installation)
 * [Project Architecture](#project-architecture)
 * [Running Experiments](#running-experiments)
+* [Acknowledgements](#acknowledgements)
 
 ## Installation
 
@@ -108,3 +109,8 @@ If you want to change other settings, please see the comments and descriptions i
 | 1-shot            | `70.1 ± 1.9` | `77.7 ± 1.6` |  `64.1 ± 1.9` | `73.5 ± 1.6` |
 | 5-shot           | `78.7 ± 0.8` | `85.2 ± 0.8` |  `77.4 ± 1.8` | `83.4 ± 0.8` |
 
+## Acknowledgements
+
+Our implementations use the source code from the following repositories and users:
+* [Meta-Transfer Learning for Few-Shot Learning](https://github.com/yaoyao-liu/meta-transfer-learning)
+* [Model-Agnostic Meta-Learning](https://github.com/cbfinn/maml)
