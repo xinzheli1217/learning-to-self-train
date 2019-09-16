@@ -69,7 +69,7 @@ class MetaModel(Models):
                                             fc_weights.keys()]))
 
                 # re-training steps
-                for j in range(FLAGS.pre_train_epoch_num - 1):
+                for j in range(FLAGS.re_train_epoch_num - 1):
                     maml_lossa = self.loss_func(self.forward_fc(emb_outputa, fast_fc_weights), labela)
 
                     logitsc = self.forward_fc(emb_outputc, fast_fc_weights)
@@ -89,7 +89,7 @@ class MetaModel(Models):
                 lossb_list.append(maml_lossb)
 
                 # fine-tuning steps
-                for k in range(num_updates - FLAGS.pre_train_epoch_num):
+                for k in range(num_updates - FLAGS.re_train_epoch_num):
                     maml_lossa = self.loss_func(self.forward_fc(emb_outputa, fast_fc_weights), labela)
 
                     grads = tf.gradients(maml_lossa, list(fast_fc_weights.values()))
@@ -126,7 +126,7 @@ class MetaModel(Models):
             self.total_accuracy = total_accuracy = tf.reduce_sum(accsb) / tf.to_float(FLAGS.meta_batch_size)
             meta_optimizer = tf.train.AdamOptimizer(self.meta_lr)
             self.metatrain_op = meta_optimizer.minimize(total_loss, var_list=ss_weights.values() + fc_weights.values())
-            rn_optimizer = tf.train.AdamOptimizer(self.rn_lr)
+            rn_optimizer = tf.train.AdamOptimizer(self.swn_lr)
             self.meta_swn_train_op = rn_optimizer.minimize(final_pretrain_loss, var_list=swn_weights.values())
 
             tf.summary.scalar(prefix + 'Final Loss', total_loss)
@@ -414,7 +414,7 @@ class MetaModel(Models):
         outputc_new = tf.nn.softmax(soft_weights) * outputc
         maml_lossc_p = self.loss_func(outputc_new, pseudo_labelc1)
 
-        if FLAGS.pre_train_epoch_num == 0:
+        if FLAGS.re_train_epoch_num == 0:
             maml_lossc_p = maml_lossc_p * tf.zeros_like(maml_lossc_p, dtype=tf.float32)
 
         loss = tf.concat([maml_lossa, maml_lossc_p], axis=0)
@@ -430,7 +430,7 @@ class MetaModel(Models):
         accb_list.append(accb)
 
         # re-training steps
-        for j in range(FLAGS.pre_train_epoch_num - 1):
+        for j in range(FLAGS.re_train_epoch_num - 1):
 
             maml_lossa = self.loss_func(self.forward_fc(inputa, fast_fc_weights), labela)
 
@@ -451,7 +451,7 @@ class MetaModel(Models):
             loss_list.append(maml_lossb)
 
         # fine-tuning steps
-        for k in range(num_updates - FLAGS.pre_train_epoch_num):
+        for k in range(num_updates - FLAGS.re_train_epoch_num):
 
             maml_lossa = self.loss_func(self.forward_fc(inputa, fast_fc_weights), labela)
 
