@@ -100,3 +100,11 @@ There are some main hyperparameters used in the experiments, you can edit them i
   - `hard_selection` number of remaining samples (per class) after applying hard-selection
   
 If you want to change other settings, please see the comments and descriptions in `exp_train.py` and `exp_test.py`.
+
+### Performance
+
+|          (%)           | 𝑚𝑖𝑛𝑖 1-shot  | 𝑚𝑖𝑛𝑖 5-shot  |  𝒕𝒊𝒆𝒓𝒆𝒅 1-shot | 𝒕𝒊𝒆𝒓𝒆𝒅 5-shot |
+| ---------------------- | ------------ | ------------ | ------------ | ------------ |
+| `MTL Paper`            | `60.2 ± 1.8` | `74.3 ± 0.9` |  — | — |
+| `TensorFlow`           | `60.8 ± 1.8` | `74.3 ± 0.9` |  `65.6 ± 1.8` | `80.6 ± 0.9` |
+
