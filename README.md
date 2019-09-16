@@ -74,8 +74,8 @@ python exp_test.py --shot_num=1 --dataset='miniImagenet' --nb_ul_samples=100 --u
 ```
 
 ### Hyperparameters and Options
-There are some main hyperparameters used in the experiments, you can edit them in the `exp_train.py` and the `exp_test.py` file for meta-train and meta-test phase respectively.  
-* Common hyperparameters (same for the two files):
+There are some main hyperparameters used in the experiments, you can edit them in the `exp_train.py` and the `exp_test.py` file for meta-train and meta-test phase respectively. There are two kinds of hyperparameters: (1) common hyperparameters that shared with meta-train and meta-test, (2) test-specific hyperparameters that used for recurrent self-training process in meta-test.
+* Common hyperparameters (shared with the two files):
   - `way_num` number of classes
   - `shot_num` number of examples per class
   - `dataset` dataset used in the experiment (miniImagenet or tieredImagenet)
@@ -85,6 +85,9 @@ There are some main hyperparameters used in the experiments, you can edit them i
   - `meta_lr` the meta learning rate for SS and initial model parameters
   - `min_meta_lr` the min meta learning rate for all meta-parameters
   - `swn_lr` the meta learning rate for SWN
-
-* Train-specific hyperparameters:
+  - `nb_ul_samples` number of unlabeled examples per class
+  - `re_train_epoch_num` number of re-training inner gradient updates
+  - `train_base_epoch_num` number of total inner gradient updates during train (meta-train only)
+  - `test_base_epoch_num` number of total inner gradient updates during test (meta-test only)
+  
 * Test-specific hyperparameters:
