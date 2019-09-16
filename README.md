@@ -89,6 +89,7 @@ There are some main hyperparameters used in the experiments, you can edit them i
   - `re_train_epoch_num` number of re-training inner gradient updates
   - `train_base_epoch_num` number of total inner gradient updates during train (meta-train only)
   - `test_base_epoch_num` number of total inner gradient updates during test (meta-test only)
+  
 * Test-specific hyperparameters:
   - `use_distractors` if using distractor classes during meta-test
   - `num_dis` number of distracting classes used for meta-testing
@@ -97,3 +98,5 @@ There are some main hyperparameters used in the experiments, you can edit them i
   - `local_update_num` number of inner gradient updates used in each recurrent stage
   - `nums_in_folders` number of unlabeled samples (per class) used in each recurrent stage
   - `hard_selection` number of remaining samples (per class) after applying hard-selection
+  
+If you want to change other settings, please see the comments and descriptions in `exp_train.py` and `exp_test.py`.
