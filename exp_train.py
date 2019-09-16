@@ -46,7 +46,7 @@ flags.DEFINE_integer('meta_print_step', 100, 'the step number to print the meta-
 flags.DEFINE_integer('meta_val_print_step', 1000, 'the step number to print the meta-val results during meta-training')
 flags.DEFINE_integer('metatrain_iterations', 15000, 'number of meta-train iterations.')
 flags.DEFINE_integer('meta_batch_size', 2, 'number of tasks sampled per meta-update')
-flags.DEFINE_integer('pre_train_epoch_num', 5, 'number of pre_training inner gradient updates.')
+flags.DEFINE_integer('re_train_epoch_num', 5, 'number of pre_training inner gradient updates.')
 flags.DEFINE_integer('train_base_epoch_num', 20, 'number of inner gradient updates during training.')
 flags.DEFINE_integer('test_base_epoch_num', 100, 'number of inner gradient updates during test.')
 flags.DEFINE_integer('lr_drop_step', 1000, 'the step number to drop meta_lr')
