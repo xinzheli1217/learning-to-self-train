@@ -21,7 +21,7 @@ flags.DEFINE_string('exp_name', 'finetune_mini_RN', 'name for the experiment')
 flags.DEFINE_integer('nb_ul_samples', 10, 'number of unlabeled examples per class (K for K-shot learning)')
 flags.DEFINE_integer('unfiles_num', 1, 'number of unlabeled files used in the experiment (There are 10 unlabeled samples per class in each file)')
 flags.DEFINE_bool('meta_finetune', True, 'if using MTL weights for finetuning')
-flags.DEFINE_string('pretrain_w_path', 'pretrain_weights_dir/pretrain_weights', 'directory for loading MTL pretraining weights')
+flags.DEFINE_string('pretrain_w_path', 'pretrain_weights_dir/', 'directory for loading MTL pretraining weights')
 flags.DEFINE_string('finetune_w_path', '', 'directory for loading MTL weights')
 
 ### Pretrain Phase Options
@@ -107,7 +107,7 @@ print('Parameters: ' + exp_string)
 # Generate Log Folders
 FLAGS.finetune_w_path = 'pretrain_weights_dir/' + str(FLAGS.shot_num) +'-shot_MTL_weights'
 FLAGS.logdir = FLAGS.logdir_base + FLAGS.exp_log_label
-FLAGS.pretrain_weights_path = FLAGS.logdir_base + FLAGS.pretrain_w_path
+FLAGS.pretrain_weights_path = FLAGS.logdir_base + FLAGS.pretrain_w_path + FLAGS.dataset + '/pretrain_weights'
 FLAGS.finetune_weights_path = FLAGS.logdir_base + FLAGS.finetune_w_path
 FLAGS.test_output_dir = FLAGS.logdir_base + 'test_output_dir'
 
