@@ -22,7 +22,7 @@ flags.DEFINE_integer('nb_ul_samples', 10, 'number of unlabeled examples per clas
 flags.DEFINE_integer('unfiles_num', 1, 'number of unlabeled files used in the experiment (There are 10 unlabeled samples per class in each file)')
 flags.DEFINE_bool('meta_finetune', True, 'if using MTL weights for finetuning')
 flags.DEFINE_string('pretrain_w_path', 'pretrain_weights_dir/pretrain_weights', 'directory for loading MTL pretraining weights')
-flags.DEFINE_string('finetune_w_path', '', 'directory for loading MTL 5-shot weights')
+flags.DEFINE_string('finetune_w_path', '', 'directory for loading MTL weights')
 
 ### Pretrain Phase Options
 flags.DEFINE_integer('pre_lr_dropstep', 5000, 'the step number to drop pre_lr')
