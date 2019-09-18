@@ -105,10 +105,9 @@ FLAGS.exp_string = exp_string
 print('Parameters: ' + exp_string)
 
 # Generate Log Folders
-FLAGS.finetune_w_path = 'pretrain_weights_dir/' + str(FLAGS.shot_num) +'-shot_MTL_weights'
 FLAGS.logdir = FLAGS.logdir_base + FLAGS.exp_log_label
 FLAGS.pretrain_weights_path = FLAGS.logdir_base + FLAGS.pretrain_w_path + FLAGS.dataset + '/pretrain_weights'
-FLAGS.finetune_weights_path = FLAGS.logdir_base + FLAGS.finetune_w_path
+FLAGS.finetune_weights_path = FLAGS.logdir_base + FLAGS.pretrain_w_path + FLAGS.dataset + '/' + str(FLAGS.shot_num) +'-shot_MTL_weights'
 FLAGS.test_output_dir = FLAGS.logdir_base + 'test_output_dir'
 
 def main():
