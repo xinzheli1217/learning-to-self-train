@@ -23,7 +23,7 @@ flags.DEFINE_integer('num_dis', 3, 'number of distracting classes used for meta-
 flags.DEFINE_bool('use_distractors', True, 'if using distractor classes during meta-testing')
 flags.DEFINE_integer('unfiles_num', 10, 'number of unlabeled files used in the experiment (There are 10 unlabeled samples per class in each file)')
 flags.DEFINE_bool('meta_finetune', False, 'if ture using MTL weights for finetuning')
-flags.DEFINE_string('pretrain_w_path', 'pretrain_weights_dir/pretrain_weights', 'directory for loading MTL pretraining weights')
+flags.DEFINE_string('pretrain_w_path', 'pretrain_weights_dir/', 'directory for loading MTL pretraining weights')
 flags.DEFINE_string('finetune_w_path', '', 'directory for loading MTL weights')
 flags.DEFINE_integer('recurrent_stage_nums', 4, 'number of recurrent stages used during meta-testing.')
 flags.DEFINE_integer('local_update_num', 40, 'number of update epoches used in each recurrent stage')
@@ -109,11 +109,11 @@ FLAGS.exp_string = exp_string
 print('Parameters: ' + exp_string)
 
 # Generate Log Folders
-FLAGS.finetune_w_path = 'pretrain_weights_dir/' + str(FLAGS.shot_num) +'-shot_MTL_weights'
 FLAGS.logdir = FLAGS.logdir_base + FLAGS.exp_log_label
-FLAGS.pretrain_weights_path = FLAGS.logdir_base + FLAGS.pretrain_w_path
-FLAGS.finetune_weights_path = FLAGS.logdir_base + FLAGS.finetune_w_path
+FLAGS.pretrain_weights_path = FLAGS.logdir_base + FLAGS.pretrain_w_path + FLAGS.dataset + '/pretrain_weights'
+FLAGS.finetune_weights_path = FLAGS.logdir_base + FLAGS.pretrain_w_path + FLAGS.dataset + '/' + str(FLAGS.shot_num) +'-shot_MTL_weights'
 FLAGS.test_output_dir = FLAGS.logdir_base + 'test_output_dir'
+
 
 def main():
     os.environ['CUDA_VISIBLE_DEVICES'] = str(FLAGS.device_id)
