@@ -118,7 +118,7 @@ Please cite our paper if it is helpful to your work:
 ```
 @inproceedings{li2019lst,
   title={Learning to Self-Train for Semi-Supervised Few-Shot Classification},
-  author={Xinzhe Li and Yaoyao Liu and Shibo Zheng and Qin Zhou and Tat{-}Seng Chua and Bernt Schiele and Qianru Sun},
+  author={Xinzhe Li and Qianru Sun and Yaoyao Liu and Shibo Zheng and Qin Zhou and Tat{-}Seng Chua and Bernt Schiele},
   booktitle={NeurIPS},
   year={2019}
 }
