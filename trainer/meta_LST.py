@@ -64,11 +64,11 @@ class MetaTrainer:
             print('Loading pretrain weights')
             if FLAGS.meta_finetune:
                 weights_path = FLAGS.finetune_weights_path
-                weights = np.load(weights_path + '/weights_' + str(15000) + '.npy').tolist()
+                weights = np.load(weights_path + '/weights_15000.npy').tolist()
                 ss_weights = np.load(
-                    weights_path + '/ss_weights_' + str(15000) + '.npy').tolist()
+                    weights_path + '/ss_weights_15000.npy').tolist()
                 fc_weights = np.load(
-                    weights_path + '/fc_weights_' + str(15000) + '.npy').tolist()
+                    weights_path + '/fc_weights_15000.npy').tolist()
                 for key in weights.keys():
                     self.sess.run(tf.assign(self.model.weights[key], weights[key]))
                 for key in ss_weights.keys():
