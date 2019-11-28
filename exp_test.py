@@ -20,7 +20,7 @@ flags.DEFINE_string('exp_name', 'finetune_mini_RN', 'name for the experiment')
 ### Basic Options used in our experiments
 flags.DEFINE_integer('nb_ul_samples', 100, 'number of unlabeled examples per class')
 flags.DEFINE_integer('num_dis', 3, 'number of distracting classes used for meta-testing')
-flags.DEFINE_bool('use_distractors', True, 'if using distractor classes during meta-testing')
+flags.DEFINE_bool('use_distractors', False, 'if using distractor classes during meta-testing')
 flags.DEFINE_integer('unfiles_num', 10, 'number of unlabeled files used in the experiment (There are 10 unlabeled samples per class in each file)')
 flags.DEFINE_bool('meta_finetune', False, 'if ture using MTL weights for finetuning')
 flags.DEFINE_string('pretrain_w_path', 'pretrain_weights_dir/', 'directory for loading MTL pretraining weights')
