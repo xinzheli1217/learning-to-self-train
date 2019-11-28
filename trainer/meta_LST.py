@@ -301,7 +301,7 @@ class MetaTrainer:
 
                 print_str = '[***] Val Loss:' + str(np.mean(test_loss) * FLAGS.meta_batch_size) + ' Val Acc:' + str(
                     np.mean(test_accs) * FLAGS.meta_batch_size) + ' Val Pre Loss:' + str(
-                    np.mean(test_rn_loss) * FLAGS.meta_batch_size)
+                    np.mean(test_swn_loss) * FLAGS.meta_batch_size)
 
                 print(print_str)
 
