@@ -73,7 +73,7 @@ python exp_train.py --shot_num=1 --dataset='miniImagenet' --nb_ul_samples=10 --m
 ```
 Run semi-supervised meta-test phase (e.g. 𝑚𝑖𝑛𝑖ImageNet, 1-shot) :
 ```bash
-python exp_test.py --shot_num=1 --dataset='miniImagenet' --nb_ul_samples=100 --unfiles_num=10 --test_iter=15000 --recurrent_stage_nums=6 --nums_in_folders=30 --hard_selection=20 --exp_name='LST_1_shot'
+python exp_test.py --shot_num=1 --dataset='miniImagenet' --use_distractors=False --nb_ul_samples=100 --unfiles_num=10 --test_iter=15000 --recurrent_stage_nums=6 --nums_in_folders=30 --hard_selection=20 --exp_name='LST_1_shot' 
 ```
 
 ### Hyperparameters and Options
