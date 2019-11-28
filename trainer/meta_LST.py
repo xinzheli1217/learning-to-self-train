@@ -451,7 +451,7 @@ class MetaTrainer:
 
         ####
         filename_dir = FLAGS.logdir_base + '/' + 'filenames_and_labels/'
-        this_setting_filename_dir = filename_dir + str(FLAGS.shot_num) + 'shot_' + str(FLAGS.way_num) + 'way/'
+        this_setting_filename_dir = filename_dir + data_name + str(FLAGS.shot_num) + 'shot_' + str(FLAGS.way_num) + 'way/'
         all_filenames = np.load(this_setting_filename_dir + 'test_filenames.npy').tolist()
         labels = np.load(this_setting_filename_dir + 'test_labels.npy').tolist()
 
