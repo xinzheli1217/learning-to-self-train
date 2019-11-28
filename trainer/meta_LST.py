@@ -383,7 +383,7 @@ class MetaTrainer:
 
             inputa, labela = process_batch(this_task_tr_filenames, this_task_tr_labels, dim_input, half_num_samples,
                                                reshape_with_one=True)
-            inputb, labelb = process_batch_new(this_task_te_filenames, this_task_te_labels, dim_input, half_num_samples,
+            inputb, labelb = process_batch(this_task_te_filenames, this_task_te_labels, dim_input, half_num_samples,
                                                reshape_with_one=True)
             inputc, labelc = process_un_batch_recur(this_task_un_filenames, this_task_un_labels, dim_input,
                                                     reshape_with_one=True)
