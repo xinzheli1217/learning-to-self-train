@@ -448,6 +448,11 @@ class MetaTrainer:
 
         half_num_samples = FLAGS.shot_num
         dim_input = FLAGS.img_size * FLAGS.img_size * 3
+        
+        if FLAGS.dataset == 'miniImagenet':
+            data_name = 'mini_'
+        else:
+            data_name = 'tiered_'
 
         ####
         filename_dir = FLAGS.logdir_base + '/' + 'filenames_and_labels/'
