@@ -82,6 +82,7 @@ There are some main hyperparameters used in the experiments, you can edit them i
   - `way_num` number of classes
   - `shot_num` number of examples per class
   - `dataset` dataset used in the experiment (miniImagenet or tieredImagenet)
+  - `pretrain_class_num` number of meta-train classes
   - `exp_name` name for the current experiment
   - `meta_batch_size` number of tasks sampled per meta-update in meta-train phase
   - `base_lr` step size alpha for inner gradient update
