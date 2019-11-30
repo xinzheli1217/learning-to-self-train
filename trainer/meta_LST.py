@@ -489,7 +489,7 @@ class MetaTrainer:
 
             this_task_dis_filenames = []
             for k in range(FLAGS.num_dis):
-                current_dis_files = dis_file_dict[k][test_idx * FLAGS.nb_ul_samples:(test_idx + 1) * FLAGS.nb_ul_samples]
+                current_dis_files = dis_file_dict[k][test_idx * 100:(test_idx + 1) * 100]
                 this_task_dis_filenames.extend(
                     current_dis_files[:task_dis_num])
 
