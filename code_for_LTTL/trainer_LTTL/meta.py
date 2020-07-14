@@ -151,25 +151,6 @@ class MetaTrainer:
         all_unlabeled_labels = np.load(
             un_train_folder + 'train' + '_' + str(FLAGS.nb_ul_samples) + '_un_labels.npy').tolist()
 
-        all_test_filenames = np.load(this_setting_filename_dir + 'val_filenames.npy').tolist()
-        test_labels = np.load(this_setting_filename_dir + 'val_labels.npy').tolist()
-
-        un_val_folder = this_setting_filename_dir + 'unlabeled_samples_for_val/'
-        test_unlabeled_filenames = np.load(
-            un_val_folder + 'val' + '_' + str(FLAGS.nb_ul_samples) + '_un_filenames.npy').tolist()
-        test_unlabeled_labels = np.load(
-            un_val_folder + 'val' + '_' + str(FLAGS.nb_ul_samples) + '_un_labels.npy').tolist()
-
-        dis_trainfile_dict = {}
-        dis_train_folder = un_train_folder + '/distracting_file'
-        for n in range(FLAGS.num_dis):
-            dis_trainfile_dict[n] = np.load(dis_train_folder + '/' + 'train_' + str(n+1) + '_dis_filenames.npy').tolist()
-
-        dis_valfile_dict = {}
-        dis_val_folder = un_val_folder + '/distracting_file'
-        for n in range(FLAGS.num_dis):
-            dis_valfile_dict[n] = np.load(dis_val_folder + '/' + 'val_' + str(n + 1) + '_dis_filenames.npy').tolist()
-
         test_idx = 0
 
         new = False
@@ -199,11 +180,6 @@ class MetaTrainer:
                 this_task_te_filenames = []
                 this_task_te_labels = []
                 this_task_dis_filenames = []
-
-                for k in range(FLAGS.num_dis):
-                    current_dis_files = dis_trainfile_dict[k][(new_train_idx * FLAGS.meta_batch_size + meta_batch_idx) * 30:(new_train_idx * FLAGS.meta_batch_size + meta_batch_idx + 1) * 30]
-                    this_task_dis_filenames.extend(
-                        current_dis_files[:task_dis_num])
 
                 for class_k in range(FLAGS.way_num):
                     this_class_filenames = this_task_filenames[
