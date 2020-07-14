@@ -8,7 +8,7 @@ import cv2
 import pdb
 
 from tqdm import trange
-from model.meta_model_test import MetaModel
+from model_LTTL.meta_model_test import MetaModel
 from tensorflow.python.platform import flags
 from misc import process_batch_new, process_un_batch_new, process_dis_batch_recur, process_un_batch_recur
 
