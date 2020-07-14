@@ -4,11 +4,11 @@ import pickle
 import random
 import numpy as np
 import tensorflow as tf
-from models import Models
+from model_LTTL.models import Models
 
 from tensorflow.python.platform import flags
 from misc import resnet_conv_block, leaky_relu, mse
-from models_LTT import Model_LTT
+from model_LTTL.models_LTT import Model_LTT
 FLAGS = flags.FLAGS
 
 class Analysis(Model_LTT):
