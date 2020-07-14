@@ -4,7 +4,7 @@ import pickle
 import random
 import numpy as np
 import tensorflow as tf
-from model_analysis import Analysis
+from model_LTTL.model_analysis import Analysis
 
 from tensorflow.python.platform import flags
 
