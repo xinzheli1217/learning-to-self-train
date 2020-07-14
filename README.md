@@ -65,7 +65,7 @@ cd learning-to-self-train
 
 ## Running Experiments
 
-First, download our processed images: miniImagenet[\[Download Page\]](https://drive.google.com/open?id=1ont6qSoBRHdQbTdEei15_ak-FagCej9S) or tieredImagenet[\[Download Page\]](https://drive.google.com/file/d/17xk0kVDCQOQ5JUFpGIbTCQgzpzl-Gyhu/view?usp=sharing), move the unziped folder to `./data`. And then download the pre-trained models: miniImagenet[\[Download Page\]](https://drive.google.com/open?id=1Qh89u-UYbXsflvx8w5c47j9pfjD-blG8) or tieredImagenet[\[Download Page\]](https://drive.google.com/file/d/12LxCbX6mnw4rNmkW8OhRuSh9AEvQXOWq/view?usp=sharing), move the unziped folder to `./pretrain_weights_dir`. 
+First, download our processed images: miniImagenet[\[Download Page\]](https://drive.google.com/open?id=1ont6qSoBRHdQbTdEei15_ak-FagCej9S) or tieredImagenet[\[Download Page\]](https://drive.google.com/file/d/17xk0kVDCQOQ5JUFpGIbTCQgzpzl-Gyhu/view?usp=sharing), move the unziped folder to `./data`. And then download the pre-trained models: miniImagenet[\[Download Page\]](https://drive.google.com/file/d/15oPCge0M7LikS161Ho1W6FFWxywAzn9S/view?usp=sharing) or tieredImagenet[\[Download Page\]](https://drive.google.com/file/d/12LxCbX6mnw4rNmkW8OhRuSh9AEvQXOWq/view?usp=sharing), move the unziped folder to `./pretrain_weights_dir`. 
 
 ### Training from Pre-Trained Models
 Run semi-supervised meta-train phase (e.g. 𝑚𝑖𝑛𝑖ImageNet, 1-shot) :
