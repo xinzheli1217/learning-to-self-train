@@ -1,6 +1,6 @@
 import os
 from tensorflow.python.platform import flags
-from trainer.meta_test import MetaTrainer
+from trainer_LTTL.meta_test import MetaTrainer
 
 FLAGS = flags.FLAGS
 ### Basic Options (the same as MTL)
