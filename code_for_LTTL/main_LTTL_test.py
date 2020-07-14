@@ -13,6 +13,7 @@ flags.DEFINE_string('phase', 'meta', 'pre or meta')
 flags.DEFINE_string('exp_log_label', 'weights_saving_dir', 'directory for summaries and checkpoints')
 flags.DEFINE_string('logdir_base', '/home/lxz/Python_code/dis_experiments_tiered/', 'directory for logs')
 flags.DEFINE_string('data_path', '/media/lxz/TOSHIBA EXT1', 'directory for data')
+flags.DEFINE_string('dataset','mini', 'dataset used in the experiment (mini or tiered)')
 flags.DEFINE_bool('full_gpu_memory_mode', False, 'in this mode, the code occupies GPU memory in advance')
 flags.DEFINE_string('exp_name', 'co-teaching_exp_pretrain5', 'name for the experiment')
 flags.DEFINE_float('reject_num', 2, 'used for setting reject rate')
@@ -23,7 +24,7 @@ flags.DEFINE_integer('num_dis', 3, 'number of distracting classes used in the ex
 flags.DEFINE_bool('use_distractors', False, 'if using distractors during meta-testing')
 flags.DEFINE_integer('unfiles_num', 10, 'number of unlabeled files')
 flags.DEFINE_bool('meta_finetune', False, 'if ture using MTL weights for finetuning')
-flags.DEFINE_string('pretrain_w_path', 'pretrain_weights_dir/tiered/pretrain_weights', 'directory for loading MTL pretraining weights')
+flags.DEFINE_string('pretrain_w_path', '', 'directory for loading MTL pretraining weights')
 flags.DEFINE_string('finetune_w_path', '', 'directory for loading MTL 5-shot weights')
 flags.DEFINE_integer('recurrent_stage_nums', 6, 'number of recurrent recurrent stage.')
 flags.DEFINE_integer('local_update_num', 40, 'number of update epoches for each recurrent stage.')
@@ -110,7 +111,8 @@ FLAGS.exp_string = exp_string
 print('Parameters: ' + exp_string)
 
 # Generate Log Folders
-FLAGS.finetune_w_path = 'pretrain_weights_dir/tiered/' + str(FLAGS.shot_num) +'-shot_MTL_weights'
+FLAGS.finetune_w_path = 'pretrain_weights_dir/' + FLAGS.dataset + '/' + str(FLAGS.shot_num) +'-shot_MTL_weights'
+FLAGS.pretrain_w_path = 'pretrain_weights_dir/' + FLAGS.dataset + '/pretrain_weights'
 FLAGS.logdir = FLAGS.logdir_base + FLAGS.exp_log_label
 FLAGS.pretrain_weights_path = FLAGS.logdir_base + FLAGS.pretrain_w_path
 FLAGS.finetune_weights_path = FLAGS.logdir_base + FLAGS.finetune_w_path
