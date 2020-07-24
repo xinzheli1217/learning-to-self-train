@@ -5,6 +5,8 @@
 
 This repository contains the TensorFlow implementation for [NeurIPS 2019](https://neurips.cc/Conferences/2019) Paper ["Learning to Self-Train for Semi-Supervised Few-Shot Classification"](https://arxiv.org/pdf/1906.00562.pdf).
 
+Check the [few-shot classification leaderboard](https://few-shot.yyliu.net/miniimagenet.html).
+
 #### Summary
 
 * [Installation](#installation)
